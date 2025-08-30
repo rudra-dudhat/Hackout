@@ -268,9 +268,3 @@ const CoastalWarningDashboard = () => {
 };
 
 export default CoastalWarningDashboard;
-
-fetch('http://localhost:5000/api/your-endpoint')
-  .then(res => res.json())
-  .then(data => {
-    // handle data
-  });

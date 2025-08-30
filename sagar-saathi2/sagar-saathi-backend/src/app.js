@@ -1,21 +1,22 @@
+// src/app.js
 const express = require('express');
-const bodyParser = require('body-parser');
-const riskRoutes = require('./routes/risk');
-const notificationRoutes = require('./routes/notification');
-require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
 
-// Routes
-app.use('/api/risk', riskRoutes);
-app.use('/api/notification', notificationRoutes);
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Backend running' });
+});
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// example API
+app.get('/api/warnings', (req, res) => {
+  res.json([{ id: 1, type: 'Storm', risk: 45 }]);
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on http://localhost:${port}`);
 });
