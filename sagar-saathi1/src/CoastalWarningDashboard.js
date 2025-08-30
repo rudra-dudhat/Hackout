@@ -95,6 +95,16 @@ const CoastalWarningDashboard = () => {
     seaLevelRise: 'Sea Level Rise'
   };
 
+  const handlePredict = async (features, mobile) => {
+    const res = await fetch('http://localhost:5000/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ features, mobile })
+    });
+    const data = await res.json();
+    // Show prediction and alert to user
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white">
       {/* Header */}
