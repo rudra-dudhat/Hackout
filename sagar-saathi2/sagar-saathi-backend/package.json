@@ -1,0 +1,21 @@
+{
+  "name": "sagar-saathi-backend",
+  "version": "1.0.0",
+  "description": "Backend for SAGAR SAATHI - Coastal Early Warning and Alerting System",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
+    "body-parser": "^1.19.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "Team Recursive Titan",
+  "license": "MIT"
+}
